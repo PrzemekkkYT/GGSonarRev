@@ -19,7 +19,7 @@ Zauważyłem, że port sonara zmienia się po pełnym zrestartowaniu programu, w
 
 Zrobiłem prosty [skrypt powershella](get_server_address.ps1), który podpina automatycznie port 6971 pod zmienny port sonara
 
-Stworzyłem także prosty program SysTray do łatwej zmiany urządzenia do którego sonar przesyła dźwięk (słuchawki, głośniki, itp.)
+Stworzyłem także prosty program [GGSysTray](https://github.com/PrzemekkkYT/GGSysTray) do łatwej zmiany urządzenia do którego sonar przesyła dźwięk (słuchawki, głośniki, itp.)
 
 ## **Endpointy**
 
