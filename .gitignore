@@ -1,0 +1,8 @@
+[Bb]in/
+[Oo]bj/
+
+*.xml
+
+.vscode/
+
+GGSysTray/
