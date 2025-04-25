@@ -1,11 +1,6 @@
-<style>
-    red { color: #DC143C; }
-    green { color: green; }
-</style>
+[![pl](https://img.shields.io/badge/lang-pl-red.svg)](README.pl.md)
 
-[![pl](https://img.shields.io/badge/lang-pl-red.svg)](.\README.pl.md)
-
-# SteelSeries GG - Sonar Api reverse engineering ![Sonar](.\sonar.ico)
+# SteelSeries GG - Sonar Api reverse engineering ![Sonar](sonar.ico)
 
 Shout-out to [Wex](https://github.com/wex) for idea and detailed explanation on how to commence on topic.
 
@@ -22,7 +17,7 @@ Like Wex I used Wireshark to examine the traffic on the port taken from the resu
 `curl https://127.0.0.1:6327/subApps -k`
 I noticed that the sonar port changes after a full restart of the program, so it is different every time.
 
-I made a simple [powershell script](.\get_server_address.ps1) that automatically connects port 6971 to the variable sonar port
+I made a simple [powershell script](get_server_address.ps1) that automatically connects port 6971 to the variable sonar port
 
 I also created a simple SysTray program to easily change the device to which the sonar transmits the sound (headphones, speakers, etc.)
 
@@ -55,7 +50,7 @@ Here are described all mental shortcuts with their possible values ​​separat
   - /volumeSettings/classic - volume settings of all virtual audio devices. Returns only settings of classic mode
   - /volumeSettings/streamer - volume settings of all virtual audio devices. Returns settings from both streamer and classic mode
   - /audioSamples/\* - sound sample management
-    - /audioSamples/samples?role=<<red>category</red>> - Loads audio samples that can be listened to during configuration
+    - /audioSamples/samples?role=\<category> - Loads audio samples that can be listened to during configuration
     - /audioSamples/isRecording - [requires analysis]
   - /features - [requires analysis]
   - /classicRedirections - redirecting sound channels to output devices in classic mode
@@ -66,7 +61,7 @@ Here are described all mental shortcuts with their possible values ​​separat
     - /audioSamples/stopRecord - [requires analysis]
   - /streamRedirections
     - /streamRedirections/isStreamMonitoringEnabled/false - is called with every interaction with channels in the sonar panel
-    - /streamRedirections/streaming/redirections/<<red>channel</red>>/isEnabled/<<green>boolean</green>> - switch redirection to stream mix for channels in streamer mode
-  - /volumeSettings/streamer/monitoring/master/volume/<green><0.00 - 1.00></green>
+    - /streamRedirections/streaming/redirections/\<channel>/isEnabled/\<boolean> - switch redirection to stream mix for channels in streamer mode
+  - /volumeSettings/streamer/monitoring/master/volume/<0.00 - 1.00>
     - /monitoring | /streaming
-  - /configs/<<red>config_id</red>>/select - sets the current audio track configuration (the program itself knows which id belongs to which track)
+  - /configs/\<config_id>/select - sets the current audio track configuration (the program itself knows which id belongs to which track)
